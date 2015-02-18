@@ -1,4 +1,14 @@
 formatter.name: pretty
 suites:
     model_prospect:
-        namespace: LIG\Model
+        namespace: LIG\Model\Prospect
+        psr4_prefix: LIG\Model\Prospect
+        src_path: .
+    model_address:
+            namespace: LIG\Model\Address
+            psr4_prefix: LIG\Model\Address
+            src_path: .
+    model_formation:
+                namespace: LIG\Model\Formation
+                psr4_prefix: LIG\Model\Formation
+                src_path: .

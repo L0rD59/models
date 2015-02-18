@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\LIG\Model;
+namespace spec\LIG\Model\Formation;
 
 use LIG\Model\Business;
 use LIG\Model\ContactInterface;
@@ -10,16 +10,16 @@ use Prophecy\Argument;
 
 class FormationSpec extends ObjectBehavior
 {
-//    public function it_is_initializable(\LIG\Model\Degree $degree,\LIG\Model\Business $business = null)
+//    public function it_is_initializable(\LIG\Model\Formation\Degree $degree,\LIG\Model\Formation\Business $business = null)
 //    {
 //        $this->beConstructedWith('name', 'shortname', $degree, $business);
 //        $this->shouldHaveType('LIG\Model\Formation');
 //    }
 
-    public function let(\LIG\Model\Degree $degree,\LIG\Model\Business $business = null)
+    public function let(\LIG\Model\Formation\Degree $degree,\LIG\Model\Formation\Business $business = null)
     {
         $this->beConstructedWith('name', 'shortname', $degree, $business);
-        $this->shouldHaveType('LIG\Model\Formation');
+        $this->shouldHaveType('LIG\Model\Formation\Formation');
     }
 
     public function it_should_have_a_name()
@@ -40,23 +40,23 @@ class FormationSpec extends ObjectBehavior
         $this->getShortname()->shouldReturn('shortname');
     }
 
-    public function it_could_have_a_business(\LIG\Model\Business $business = null)
+    public function it_could_have_a_business(\LIG\Model\Formation\Business $business = null)
     {
 //        $this->getBusiness()->shouldReturn(null);
 
         $this->setBusiness($business);
 
         $this->getBusiness()->shouldReturn($business);
-        $this->getBusiness()->shouldBeAnInstanceOf('LIG\Model\Business');
+        $this->getBusiness()->shouldBeAnInstanceOf('LIG\Model\Formation\Business');
     }
 
-    public function it_should_have_a_degree(\LIG\Model\Degree $degree)
+    public function it_should_have_a_degree(\LIG\Model\Formation\Degree $degree)
     {
         $this->getDegree()->shouldNotReturn(null);
 
         $this->setDegree($degree);
 
         $this->getDegree()->shouldReturn($degree);
-        $this->getDegree()->shouldBeAnInstanceOf('LIG\Model\Degree');
+        $this->getDegree()->shouldBeAnInstanceOf('LIG\Model\Formation\Degree');
     }
 }

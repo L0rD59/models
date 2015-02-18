@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\LIG\Model;
+namespace spec\LIG\Model\Prospect;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -9,6 +9,6 @@ class ProspectSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('LIG\Model\Prospect');
+        $this->shouldHaveType('LIG\Model\Prospect\Prospect');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\LIG\Model;
+namespace spec\LIG\Model\Formation;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -10,6 +10,6 @@ class BusinessSpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->beConstructedWith('name');
-        $this->shouldHaveType('LIG\Model\Business');
+        $this->shouldHaveType('LIG\Model\Formation\Business');
     }
 }

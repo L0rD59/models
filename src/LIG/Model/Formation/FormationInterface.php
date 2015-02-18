@@ -1,6 +1,6 @@
 <?php
 
-namespace LIG\Model;
+namespace LIG\Model\Formation;
 
 interface FormationInterface
 {

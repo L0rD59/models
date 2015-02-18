@@ -1,6 +1,6 @@
 <?php
 
-namespace LIG\Model;
+namespace LIG\Model\Formation;
 
 use Doctrine\ORM\Mapping as ORM;
 
