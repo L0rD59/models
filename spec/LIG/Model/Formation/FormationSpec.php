@@ -41,8 +41,6 @@ class FormationSpec extends ObjectBehavior
 
     public function it_could_have_a_business(\LIG\Model\Formation\Business $business = null)
     {
-//        $this->getBusiness()->shouldReturn(null);
-
         $this->setBusiness($business);
 
         $this->getBusiness()->shouldReturn($business);
