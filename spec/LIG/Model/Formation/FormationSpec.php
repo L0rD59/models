@@ -2,9 +2,8 @@
 
 namespace spec\LIG\Model\Formation;
 
-use LIG\Model\Business;
-use LIG\Model\ContactInterface;
-use LIG\Model\Degree;
+use LIG\Model\Formation\ContactInterface;
+use LIG\Model\Formation\Degree;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

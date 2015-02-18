@@ -4,14 +4,24 @@ namespace LIG\Model\Formation;
 
 class Formation
 {
-
+    /** @var string $name */
     protected $name;
 
+    /** @var string $shortname */
     protected $shortname;
 
-    public function __construct($name, $argument2, $argument3, $argument4)
+    /** @var Degree $degree */
+    protected $degree;
+
+    /** @var Business $business */
+    protected $business;
+
+    public function __construct($name, $shortname, Degree $degree, Business $business)
     {
         $this->name = $name;
+        $this->shortname = $shortname;
+        $this->degree = $degree;
+        $this->business = $business;
     }
 
     public function getName()
@@ -19,28 +29,38 @@ class Formation
         return $this->name;
     }
 
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
     public function getShortname()
     {
-        // TODO: write logic here
+        return $this->shortname;
     }
 
-    public function setBusiness($argument1)
+    public function setShortname($shortname)
     {
-        // TODO: write logic here
-    }
-
-    public function getDegree()
-    {
-        // TODO: write logic here
+        $this->shortname = $shortname;
     }
 
     public function getBusiness()
     {
-        // TODO: write logic here
+        return $this->business;
     }
 
-    public function setName($argument1)
+    public function setBusiness(Business $business)
     {
-        $this->name = $argument1;
+        $this->business = $business;
+    }
+
+    public function getDegree()
+    {
+        return $this->degree;
+    }
+
+    public function setDegree(Degree $degree)
+    {
+        $this->degree = $degree;
     }
 }
