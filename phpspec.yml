@@ -1,0 +1,4 @@
+formatter.name: pretty
+suites:
+    model_prospect:
+        namespace: LIG\Model
