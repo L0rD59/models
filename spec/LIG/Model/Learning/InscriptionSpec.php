@@ -3,6 +3,7 @@
 namespace spec\LIG\Model\Learning;
 
 use LIG\Model\Learning\AbstractCampus;
+use LIG\Model\Learning\Student;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -35,5 +36,17 @@ class InscriptionSpec extends ObjectBehavior
         $this->setCampus($campus);
 
         $this->getCampus()->shouldReturn($campus);
+    }
+
+    function it_had_no_student_by_default()
+    {
+        $this->getStudent()->shouldReturn(null);
+    }
+
+    function it_had_mutable_student(Student $student)
+    {
+        $this->setStudent($student);
+
+        $this->getStudent()->shouldReturn($student);
     }
 }

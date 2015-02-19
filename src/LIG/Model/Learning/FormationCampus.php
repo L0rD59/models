@@ -2,6 +2,6 @@
 
 namespace LIG\Model\Learning;
 
-class FormationCampus
+class FormationCampus extends AbstractCampus
 {
 }

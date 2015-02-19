@@ -1,6 +1,6 @@
 <?php
 
-namespace LIG\Model\Student;
+namespace LIG\Model\Learning;
 
 use Doctrine\Common\Collections\ArrayCollection;
 

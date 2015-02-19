@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\LIG\Model\Student;
+namespace spec\LIG\Model\Learning;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -9,7 +9,7 @@ class StudentSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('LIG\Model\Student\Student');
+        $this->shouldHaveType('LIG\Model\Learning\Student');
     }
 
     function it_initializes_inscriptions_collection_by_default()

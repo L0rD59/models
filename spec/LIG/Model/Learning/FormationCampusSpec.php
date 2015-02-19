@@ -14,6 +14,14 @@ class FormationCampusSpec extends ObjectBehavior
 
     function it_should_be_an_abstractCampus()
     {
-        $this->beAnInstanceOf('LIG\Model\Learning\AbstractCampus');
+        $this->shouldBeAnInstanceOf('LIG\Model\Learning\AbstractCampus');
     }
+
+    function it_had_mutable_name($name)
+    {
+        $this->setName($name);
+
+        $this->getName()->shouldReturn($name);
+    }
+
 }

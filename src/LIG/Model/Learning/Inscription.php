@@ -10,6 +10,9 @@ class Inscription
     /** @var  AbstractCampus $campus */
     protected $campus;
 
+    /** @var  Student $student */
+    protected $student;
+
     public function getDateInscription()
     {
         return $this->dateInscription;
@@ -28,5 +31,15 @@ class Inscription
     public function setCampus(AbstractCampus $campus)
     {
         $this->campus = $campus;
+    }
+
+    public function getStudent()
+    {
+        return $this->student;
+    }
+
+    public function setStudent(Student $student)
+    {
+        $this->student = $student;
     }
 }

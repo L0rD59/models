@@ -12,11 +12,11 @@ suites:
         namespace: LIG\Model\Formation
 #        psr4_prefix: LIG\Model\Formation
 #        src_path: .
-    model_student:
-        namespace: LIG\Model\Student
-#        psr4_prefix: LIG\Model\Student
+    model_user:
+        namespace: LIG\Model\User
+#        psr4_prefix: LIG\Model\User
 #        src_path: .
     model_learning:
         namespace: LIG\Model\Learning
-#        psr4_prefix: LIG\Model\Student
+#        psr4_prefix: LIG\Model\Learning
 #        src_path: .
