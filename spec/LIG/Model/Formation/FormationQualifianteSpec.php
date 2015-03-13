@@ -3,22 +3,17 @@
 namespace spec\LIG\Model\Formation;
 
 use LIG\Model\Formation\ContactInterface;
-use LIG\Model\Formation\Degree;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class FormationSpec extends ObjectBehavior
+class FormationQualifianteSpec extends ObjectBehavior
 {
-//    public function it_is_initializable(\LIG\Model\Formation\Degree $degree,\LIG\Model\Formation\Business $business = null)
-//    {
-//        $this->beConstructedWith('name', 'shortname', $degree, $business);
-//        $this->shouldHaveType('LIG\Model\Formation');
-//    }
-
     public function let(\LIG\Model\Formation\Degree $degree,\LIG\Model\Formation\Business $business = null)
     {
         $this->beConstructedWith('name', 'shortname', $degree, $business);
-        $this->shouldHaveType('LIG\Model\Formation\Formation');
+        $this->shouldHaveType('LIG\Model\Formation\FormationQualifiante');
+        $this->shouldBeAnInstanceOf('LIG\Model\Formation\AbstractFormation');
+//        $this->shouldImplement('LIG\Model\Formation\FormationInteface');
     }
 
     public function it_should_have_a_name()

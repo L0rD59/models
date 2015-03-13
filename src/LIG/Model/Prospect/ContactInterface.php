@@ -5,18 +5,18 @@ namespace LIG\Model\Prospect;
 interface ContactInterface extends \Serializable
 {
     /**
-     * Get name of contact
+     * Get type of contact
      *
      * @return string
      */
-    public function getName();
+    public function getType();
 
     /**
-     * Set name of contact
+     * Set type of contact
      *
-     * @param string $name
+     * @param string $type
      *
      * @return self
      */
-    public function setName($name);
+    public function setType($type);
 }

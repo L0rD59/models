@@ -2,7 +2,7 @@
 
 namespace LIG\Model\Formation;
 
-class Formation
+abstract class AbstractFormation implements FormationInterface
 {
     /** @var string $name */
     protected $name;

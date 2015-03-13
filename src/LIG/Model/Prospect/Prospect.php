@@ -5,6 +5,7 @@ namespace LIG\Model\Prospect;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
+use Geocoder\Result\Geocoded;
 
 /**
  * @ORM\MappedSuperclass
@@ -48,16 +49,26 @@ class Prospect implements ProspectInterface, ContacteableInterface
     protected $coupons;
 
     /**
-     * @var Collection $contacts
+     * @var ContactCollection | AbstractContact[] $contacts
      *
      * @ORM\ManyToOne(targetEntity="ContactInterface", mappedBy="prospect")
      * @ORM\JoinColumn(name="id_contact", referencedColumnName="id")
      */
     protected $contacts;
 
-    public function __construct()
+    /**
+     * @var  string $geocode
+     *
+     * @ORM\Column(type="string")
+     */
+    protected $geocode;
+
+    protected $provider;
+
+    public function __construct(ContactCollection $contacts, $provider)
     {
-        $this->contacts = new ArrayCollection();
+        $this->provider = $provider;
+        $this->contacts = $contacts;
     }
 
     /**
@@ -82,6 +93,12 @@ class Prospect implements ProspectInterface, ContacteableInterface
 
         return $this;
     }
+
+    public function hasContacts()
+    {
+        return $this->contacts->count() && !$this->contacts->isEmpty();
+    }
+
     /**
      * @return mixed
      */
@@ -146,7 +163,27 @@ class Prospect implements ProspectInterface, ContacteableInterface
         $this->lastname = $lastname;
     }
 
+    public function getGeocode()
+    {
+        return $this->geocode;
+    }
 
+    public function setGeocode($geocode)
+    {
+        $this->geocode = $geocode;
 
+        return $this;
+    }
 
+    public function getProvider()
+    {
+        return $this->provider;
+    }
+
+    public function setProvider($provider)
+    {
+        $this->provider = $provider;
+
+        return $this;
+    }
 }
