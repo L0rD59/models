@@ -2,8 +2,7 @@
 
 #### Installation
 
-Using Composer : 
-add the enaco private repository in your composer.json : 
+Using Composer, add the enaco private repository in your `composer.json` : 
 
 ```
 

@@ -12,7 +12,7 @@ class EmailContactSpec extends ObjectBehavior
         $this->beConstructedWith($email);
     }
 
-    function it_is_initializable($email)
+    function it_is_initializable()
     {
         $this->shouldHaveType('LIG\Model\Prospect\EmailContact');
         $this->shouldBeAnInstanceOf('LIG\Model\Prospect\AbstractContact');

@@ -2,6 +2,7 @@
 
 namespace spec\LIG\Model\Prospect;
 
+use LIG\Model\Prospect\AbstractContact;
 use LIG\Model\Prospect\EmailContact;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -28,8 +29,10 @@ class ContactCollectionSpec extends ObjectBehavior
         $this->shouldThrow('\Exception')->during('__construct', array(array(new \stdClass())));
     }
 
-    function it_can_add_only_contact_instance()
+    function it_can_add_only_contact_instance(AbstractContact $contact)
     {
         $this->shouldThrow('\Exception')->during('add', array(new \stdClass()));
+
+        $this->add($contact)->shouldReturn(true);
     }
 }

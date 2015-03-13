@@ -9,14 +9,6 @@ interface ContactInterface extends \Serializable
      *
      * @return string
      */
-    public function getType();
+    public static function getType();
 
-    /**
-     * Set type of contact
-     *
-     * @param string $type
-     *
-     * @return self
-     */
-    public function setType($type);
 }

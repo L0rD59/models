@@ -14,7 +14,7 @@ class TelephoneNumberContact extends AbstractContact
         $this->setTelephoneNumber($telephoneNumber);
     }
 
-    public function getType()
+    public static function getType()
     {
         return self::__TYPE__;
     }

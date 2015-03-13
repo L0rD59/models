@@ -4,28 +4,23 @@ namespace spec\LIG\Model\Prospect;
 
 use LIG\Model\Prospect\ContactCollection;
 use LIG\Model\Prospect\EmailContact;
+use LIG\Model\Prospect\OwnerInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
+
 class ProspectSpec extends ObjectBehavior
 {
-    public function let(ContactCollection $contactCollection, EmailContact $emailContact, $provider)
+    public function let(ContactCollection $contactCollection, EmailContact $emailContact, $provider, OwnerInterface $owner)
     {
-        $emailContact->beADoubleOf('LIG\Model\Prospect\EmailContact');
-
         $contactCollection->beConstructedWith(array(array($emailContact->getWrappedObject())));
-        $contactCollection->count()->willReturn(1);
-        $contactCollection->isEmpty()->willReturn(false);
 
-        $this->beConstructedWith($contactCollection->getWrappedObject(), $provider);
+        $this->beConstructedWith($contactCollection->getWrappedObject(), $provider, $owner->getWrappedObject());
     }
 
     function it_is_initializable()
     {
         $this->shouldHaveType('LIG\Model\Prospect\Prospect');
-
-        $this->hasContacts()->shouldReturn(true);
-        $this->shouldHaveContacts();
     }
 
     function it_should_have_collection_of_contacts()
@@ -65,7 +60,11 @@ class ProspectSpec extends ObjectBehavior
     {
         $this->getProvider()->shouldNotBeNull();
         $this->setProvider($provider)->getProvider()->shouldBe($provider);
-//        $this->getProvider()->shouldImplement('LIG\Model\Prospect\ProspectProviderInterface');
-//        $this->getProvider()->shouldBeAnIntanceOf('LIG\Model\Prospect\AbstractProspectProvider');
+    }
+
+    function it_should_be_have_a_muteable_owner(OwnerInterface $owner)
+    {
+        $this->getOwner()->shouldNotBeNull();
+        $this->setOwner($owner)->getOwner()->shouldBe($owner);
     }
 }

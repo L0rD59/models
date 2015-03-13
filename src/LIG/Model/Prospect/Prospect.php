@@ -57,18 +57,31 @@ class Prospect implements ProspectInterface, ContacteableInterface
     protected $contacts;
 
     /**
-     * @var  string $geocode
+     * @var string $geocode
      *
      * @ORM\Column(type="string")
      */
     protected $geocode;
 
+    /**
+     * @var string $geocode
+     *
+     * @ORM\Column(type="string")
+     */
     protected $provider;
 
-    public function __construct(ContactCollection $contacts, $provider)
+    /**
+     * @var InvoiceSubjectInterface | OwnerInterface $owner
+     *
+     * @ORM\ManyToOne(targetEntity="OwnerInterface")
+     */
+    protected $owner;
+
+    public function __construct(ContactCollection $contacts, $provider, OwnerInterface $owner)
     {
         $this->provider = $provider;
         $this->contacts = $contacts;
+        $this->owner = $owner;
     }
 
     /**
@@ -96,7 +109,7 @@ class Prospect implements ProspectInterface, ContacteableInterface
 
     public function hasContacts()
     {
-        return $this->contacts->count() && !$this->contacts->isEmpty();
+        return $this->contacts->hasContact();
     }
 
     /**
@@ -183,6 +196,18 @@ class Prospect implements ProspectInterface, ContacteableInterface
     public function setProvider($provider)
     {
         $this->provider = $provider;
+
+        return $this;
+    }
+
+    public function getOwner()
+    {
+        return $this->owner;
+    }
+
+    public function setOwner(OwnerInterface $owner)
+    {
+        $this->owner = $owner;
 
         return $this;
     }

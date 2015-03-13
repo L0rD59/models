@@ -18,25 +18,14 @@ abstract class AbstractContact implements ContactInterface
 
     public function __construct()
     {
-        $this->setType($this->getType());
+
     }
 
-    /**
-     * @param string $type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
 
     /**
      * @return string
      */
-    abstract function getType();
+    static function getType(){}
 
     abstract function serialize();
 

@@ -14,7 +14,7 @@ class FacebookContact extends AbstractContact
         $this->setFbId($fbId);
     }
 
-    public function getType()
+    public static function getType()
     {
         return self::__TYPE__;
     }

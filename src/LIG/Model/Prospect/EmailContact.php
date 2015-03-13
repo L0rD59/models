@@ -29,7 +29,7 @@ class EmailContact extends AbstractContact
      * @see inheritdoc
      * @return string
      */
-    public function getType()
+    public static function getType()
     {
         return self::__TYPE__;
     }

@@ -30,8 +30,4 @@ class ContactCollection extends ArrayCollection
         return parent::add($contact);
     }
 
-    public function hasContact()
-    {
-        return $this->count() && !$this->isEmpty();
-    }
 }

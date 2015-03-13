@@ -2,9 +2,7 @@
 
 namespace LIG\Model\User;
 
-use Symfony\Component\Security\Core\User\AdvancedUserInterface;
-
-class User implements AdvancedUserInterface
+class User implements UserInterface
 {
     public function isAccountNonExpired(){}
 
@@ -23,4 +21,6 @@ class User implements AdvancedUserInterface
     public function getUsername(){}
 
     public function eraseCredentials(){}
+
+    public static function getType(){}
 }
