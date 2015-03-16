@@ -4,23 +4,7 @@
 
 Using Composer, add the enaco private repository in your `composer.json` : 
 
-```
-
-{
-    ...
-    
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "http://packages-private.enaco.fr"
-        }
-    ]
-    
-    ...
-    
-}
-
-```
+`composer config repositories.enaco-private composer http://packages-private.enaco.fr`
 
 then run `composer require lig/models`
 

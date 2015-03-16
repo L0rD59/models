@@ -21,17 +21,7 @@ class EmailContact extends AbstractContact
 
     public function __construct($email)
     {
-        parent::__construct();
         $this->setEmail($email);
-    }
-
-    /**
-     * @see inheritdoc
-     * @return string
-     */
-    public static function getType()
-    {
-        return self::__TYPE__;
     }
 
     /**

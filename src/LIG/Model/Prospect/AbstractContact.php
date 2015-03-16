@@ -16,16 +16,12 @@ abstract class AbstractContact implements ContactInterface
      */
     protected $type;
 
-    public function __construct()
-    {
-
-    }
-
-
     /**
      * @return string
      */
-    static function getType(){}
+    public static function getType(){
+        return self::__TYPE__;
+    }
 
     abstract function serialize();
 
