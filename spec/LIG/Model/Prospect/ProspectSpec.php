@@ -2,6 +2,7 @@
 
 namespace spec\LIG\Model\Prospect;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use LIG\Model\Prospect\ContactCollection;
 use LIG\Model\Prospect\EmailContact;
 use LIG\Model\Prospect\OwnerInterface;
@@ -66,5 +67,10 @@ class ProspectSpec extends ObjectBehavior
     {
         $this->getOwner()->shouldNotBeNull();
         $this->setOwner($owner)->getOwner()->shouldBe($owner);
+    }
+
+    function it_could_have_a_muteable_attribute_collection(ArrayCollection $attributeCollection)
+    {
+        $this->setAttributes($attributeCollection)->getAttributes()->shouldReturn($attributeCollection);
     }
 }

@@ -2,12 +2,20 @@
 
 namespace LIG\Model\Learning;
 
+use Doctrine\ORM\Mapping as ORM;
+
 class Inscription
 {
-    /** @var \DateTime $dateInscription */
+    /**
+     * @var \DateTime $dateInscription Date d'inscription au campus
+     *
+     * @ORM\Column(type="datetime")
+     */
     protected $dateInscription;
 
-    /** @var  AbstractCampus $campus */
+    /**
+     * @var  AbstractCampus $campus Campus auquel l'étudiant est inscrit
+     */
     protected $campus;
 
     /** @var  Student $student */

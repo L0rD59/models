@@ -2,9 +2,15 @@
 
 namespace LIG\Model\Learning;
 
+use Doctrine\ORM\Mapping as ORM;
+
 abstract class AbstractCampus
 {
-    /** @var string $name */
+    /**
+     * @var string $name Nom du campus
+     *
+     * @ORM\Column()
+     */
     protected $name;
 
     public function getName()

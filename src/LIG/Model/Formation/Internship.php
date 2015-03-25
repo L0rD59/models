@@ -2,6 +2,6 @@
 
 namespace LIG\Model\Formation;
 
-class Business
+class Internship
 {
 }

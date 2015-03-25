@@ -7,7 +7,7 @@ use LIG\Model\Formation\Internship;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class FormationQualifianteSpec extends ObjectBehavior
+class FormationCertifianteSpec extends ObjectBehavior
 {
     public function let(\LIG\Model\Formation\Degree $degree,\LIG\Model\Formation\Business $business = null)
     {
@@ -16,7 +16,7 @@ class FormationQualifianteSpec extends ObjectBehavior
 
     public function it_is_initializable()
     {
-        $this->shouldHaveType('LIG\Model\Formation\FormationQualifiante');
+        $this->shouldHaveType('LIG\Model\Formation\FormationCertifiante');
         $this->shouldBeAnInstanceOf('LIG\Model\Formation\Formation');
     }
 }

@@ -2,6 +2,6 @@
 
 namespace LIG\Model\Formation;
 
-class FormationCertifiante extends AbstractFormation
+class FormationCertifiante extends Formation
 {
 }
