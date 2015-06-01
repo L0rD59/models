@@ -5,29 +5,29 @@ namespace LIG\Model\Formation;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\MappedSuperlass
+ * @MappedSuperclass
  */
 class Formation implements FormationInterface
 {
     /**
      * @var string $name Nom de la formation
      *
-     * @ORM\Column()
+     * @Column()
      */
     protected $name;
 
     /**
      * @var string $shortname Petit-nom de la formation
      *
-     * @ORM\Column()
+     * @Column()
      */
     protected $shortname;
 
     /**
      * @var Degree $degree Niveau requis de la formation
      *
-     * @ORM\OneToOne(targetEntity="Degree")
-     * @ORM\JoinColumn(name="degree_id", referencedColumnName="id")
+     * @OneToOne(targetEntity="Degree")
+     * @JoinColumn(name="degree_id", referencedColumnName="id")
      */
     protected $degree;
 
@@ -43,14 +43,14 @@ class Formation implements FormationInterface
      * @var Internship $internship Stage de la formation
      *
      * @OneToOne(targetEntity="Internship")
-     * @JoinColumn(name="internship_id", referencedColumnName="id", nulleable=true)
+     * @JoinColumn(name="internship_id", referencedColumnName="id", nullable=true)
      */
     protected $internship = null;
 
     /**
      * @var integer $duration Durée de la formation
      *
-     * @ORM\Column(type="integer")
+     * @Column(type="integer")
      */
     protected $duration;
 

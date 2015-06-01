@@ -3,11 +3,15 @@
 namespace LIG\Model\Prospect;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use LIG\Model\Contact\ContactCollection;
 use Sylius\Component\Attribute\Model\Attribute;
 
+/**
+ * @MappedSuperclass
+ */
 class ProspectLearning extends Prospect
 {
-    public function __construct(ContactCollection $contacts, $provider, OwnerInterface $owner)
+    public function __construct(ContactCollection $contacts, $provider, ProspectOwnerInterface $owner)
     {
         parent::__construct($contacts, $provider, $owner);
 

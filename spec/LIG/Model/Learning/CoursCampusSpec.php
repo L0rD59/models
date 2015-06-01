@@ -7,13 +7,27 @@ use Prophecy\Argument;
 
 class CoursCampusSpec extends ObjectBehavior
 {
-    function it_is_initializable()
+    public function let($name, $reference)
     {
-        $this->shouldHaveType('LIG\Model\Learning\CoursCampus');
+        $this->beAnInstanceOf('LIG\Model\Learning\Stubs\CoursCampus');
+
+        $this->beConstructedWith($name, $reference);
     }
 
-    function it_should_be_an_abstractCampus()
+    function it_is_initializable()
     {
         $this->beAnInstanceOf('LIG\Model\Learning\AbstractCampus');
+    }
+
+    function it_should_muteable_have_a_name($name)
+    {
+        $this->getName()->shouldNotBeNull();
+        $this->setName($name)->getName()->shouldReturn($name);
+    }
+
+    function it_should_have_a_muteable_reference($reference)
+    {
+        $this->getReference()->shouldNotBeNull();
+        $this->setReference($reference)->getReference()->shouldReturn($reference);
     }
 }

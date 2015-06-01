@@ -11,11 +11,12 @@ class FormationDiplomanteSpec extends ObjectBehavior
 {
     public function let(\LIG\Model\Formation\Degree $degree,\LIG\Model\Formation\Business $business = null, Internship $internship)
     {
+        $this->beAnInstanceOf('LIG\Model\Formation\Stubs\FormationDiplomante');
+
         $this->beConstructedWith('name', 'shortname', 1500, $degree, $business, $internship);
     }
     public function it_is_initializable()
     {
-        $this->shouldHaveType('LIG\Model\Formation\FormationDiplomante');
         $this->shouldBeAnInstanceOf('LIG\Model\Formation\Formation');
     }
 

@@ -9,44 +9,31 @@ use Prophecy\Argument;
 
 class InscriptionSpec extends ObjectBehavior
 {
+    function let(Student $student, AbstractCampus $campus)
+    {
+        $this->beConstructedWith($student, $campus);
+    }
+
     function it_is_initializable()
     {
         $this->shouldHaveType('LIG\Model\Learning\Inscription');
     }
 
-    function it_had_no_dateInscription_by_default()
+    function it_should_have_a_date_inscription()
     {
-        $this->getDateInscription()->shouldreturn(null);
+        $this->getDateInscription()->shouldNotBe(null);
+        $this->getDateInscription()->shouldBeAnInstanceOf('\DateTime');
     }
 
-    function it_had_mutable_dateInscription(\DateTime $dateInscription)
+    function it_should_have_a_student()
     {
-        $this->setDateInscription($dateInscription);
-
-        $this->getDateInscription()->shouldReturn($dateInscription);
+        $this->getStudent()->shouldNotBeNull();
+        $this->getStudent()->shouldBeAnInstanceOf('LIG\Model\Learning\Student');
     }
 
-    function it_had_no_campus_by_default()
+    function it_should_have_a_campus()
     {
-        $this->getCampus()->shouldReturn(null);
-    }
-
-    function it_had_mutable_campus(AbstractCampus $campus)
-    {
-        $this->setCampus($campus);
-
-        $this->getCampus()->shouldReturn($campus);
-    }
-
-    function it_had_no_student_by_default()
-    {
-        $this->getStudent()->shouldReturn(null);
-    }
-
-    function it_had_mutable_student(Student $student)
-    {
-        $this->setStudent($student);
-
-        $this->getStudent()->shouldReturn($student);
+        $this->getCampus()->shouldNotBeNull();
+        $this->getCampus()->shouldBeAnInstanceOf('LIG\Model\Learning\AbstractCampus');
     }
 }

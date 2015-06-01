@@ -3,18 +3,18 @@
 namespace spec\LIG\Model\Prospect;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use LIG\Model\Prospect\ContactCollection;
-use LIG\Model\Prospect\EmailContact;
-use LIG\Model\Prospect\OwnerInterface;
+use LIG\Model\Contact\ContactCollection;
+use LIG\Model\Contact\ContactInterface;
+use LIG\Model\Prospect\ProspectOwnerInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 
 class ProspectSpec extends ObjectBehavior
 {
-    public function let(ContactCollection $contactCollection, EmailContact $emailContact, $provider, OwnerInterface $owner)
+    public function let(ContactCollection $contactCollection, ContactInterface $contact, $provider, ProspectOwnerInterface $owner)
     {
-        $contactCollection->beConstructedWith(array(array($emailContact->getWrappedObject())));
+        $contactCollection->beConstructedWith(array(array($contact->getWrappedObject()), $owner->getWrappedObject()));
 
         $this->beConstructedWith($contactCollection->getWrappedObject(), $provider, $owner->getWrappedObject());
     }
@@ -63,7 +63,7 @@ class ProspectSpec extends ObjectBehavior
         $this->setProvider($provider)->getProvider()->shouldBe($provider);
     }
 
-    function it_should_be_have_a_muteable_owner(OwnerInterface $owner)
+    function it_should_have_a_muteable_owner(ProspectOwnerInterface $owner)
     {
         $this->getOwner()->shouldNotBeNull();
         $this->setOwner($owner)->getOwner()->shouldBe($owner);

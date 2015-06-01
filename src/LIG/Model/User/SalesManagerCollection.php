@@ -14,8 +14,8 @@ class SalesManagerCollection extends ArrayCollection
         }
 
         array_walk($salesManagers, function ($salesManager, $i) {
-            if (!$salesManager instanceof UserSalesManager) {
-                throw new \Exception('Invalid item (#'.$i.') in SalesManagerCollection expected instance of UserSalesManager');
+            if (!$salesManager instanceof UserSalesManagerInterface) {
+                throw new \Exception('Invalid item (#'.$i.') in SalesManagerCollection expected instance of UserSalesManager'.(is_object($salesManager) ? ' '.get_class($salesManager).' given' : ''));
             }
         });
 
@@ -24,7 +24,7 @@ class SalesManagerCollection extends ArrayCollection
 
     public function add($userSalesManager)
     {
-        if(!($userSalesManager instanceof UserSalesManager)){
+        if(!($userSalesManager instanceof UserSalesManagerInterface)){
             throw new \Exception('Invalid userSalesManager ');
         }
         return parent::add($userSalesManager);

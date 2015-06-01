@@ -4,31 +4,42 @@ namespace LIG\Model\Learning;
 
 use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @MappedSuperclass
+ */
 class Inscription
 {
     /**
      * @var \DateTime $dateInscription Date d'inscription au campus
      *
-     * @ORM\Column(type="datetime")
+     * @Column(type="datetime")
      */
     protected $dateInscription;
 
     /**
-     * @var  AbstractCampus $campus Campus auquel l'étudiant est inscrit
+     * @var AbstractCampus $campus Campus auquel l'étudiant est inscrit
+     *
+     * @ManyToOne(targetEntity="AbstractCampus", cascade={"all"}, fetch="EAGER")
      */
     protected $campus;
 
-    /** @var  Student $student */
+    /**
+     * @var Student $student Etudiant inscrit
+     *
+     * @ManyToOne(targetEntity="Student", inversedBy="inscriptions", cascade={"all"}, fetch="EAGER")
+     */
     protected $student;
+
+    public function __construct(Student $student, AbstractCampus $campus, \DateTime $dateInscription = null)
+    {
+        $this->student = $student;
+        $this->campus = $campus;
+        $this->dateInscription = !is_null($dateInscription) ? $dateInscription : new \DateTime();
+    }
 
     public function getDateInscription()
     {
         return $this->dateInscription;
-    }
-
-    public function setDateInscription(\DateTime $dateInscription)
-    {
-        $this->dateInscription = $dateInscription;
     }
 
     public function getCampus()
@@ -36,18 +47,8 @@ class Inscription
         return $this->campus;
     }
 
-    public function setCampus(AbstractCampus $campus)
-    {
-        $this->campus = $campus;
-    }
-
     public function getStudent()
     {
         return $this->student;
-    }
-
-    public function setStudent(Student $student)
-    {
-        $this->student = $student;
     }
 }

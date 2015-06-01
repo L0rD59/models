@@ -5,77 +5,80 @@ namespace LIG\Model\Prospect;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
-use Geocoder\Result\Geocoded;
+use LIG\Model\Common\OwnerInterface;
+use LIG\Model\Contact\ContactCollection;
+use LIG\Model\Contact\ContacteableInterface;
+use LIG\Model\Contact\ContactInterface;
 use Sylius\Component\Attribute\Model\AttributeSubjectInterface;
 use Sylius\Component\Attribute\Model\AttributeValueInterface;
 
 /**
- * @ORM\MappedSuperclass
+ * @MappedSuperclass
  */
 class Prospect implements ProspectInterface, ContacteableInterface, AttributeSubjectInterface
 {
     /**
      * @var string $firstname
      *
-     * @ORM\Column(type="string")
+     * @Column(type="string")
      */
     protected $firstname;
 
     /**
      * @var string $firstname
      *
-     * @ORM\Column(type="string")
+     * @Column(type="string")
      */
     protected $lastname;
 
     /**
      * @var string $firstname
      *
-     * @ORM\Column(type="string")
+     * @Column(type="string")
      */
     protected $email;
 
     /**
      * @var string $firstname
      *
-     * @ORM\Column(type="string")
+     * @Column(type="string")
      */
     protected $birthday;
+//
+//    /**
+//     * @var Collection $coupons
+//     *
+//     * @OneToMany(targetEntity="CouponInterface")
+//     * @JoinColumn(name="id_prospect", referencedColumnName="id")
+//     */
+//    protected $coupons;
 
-    /**
-     * @var Collection $coupons
-     *
-     * @ORM\OneToMany(targetEntity="CouponInterface")
-     * @ORM\JoinColumn(name="id_prospect", referencedColumnName="id")
-     */
-    protected $coupons;
-
-    /**
-     * @var ContactCollection | AbstractContact[] $contacts
-     *
-     * @ORM\ManyToOne(targetEntity="ContactInterface", mappedBy="prospect")
-     * @ORM\JoinColumn(name="id_contact", referencedColumnName="id")
-     */
-    protected $contacts;
+//    /**
+//     * @var ContactCollection | AbstractContact[] $contacts
+//     *
+//     * @ManyToOne(targetEntity="ContactInterface")
+//     * @JoinColumn(name="id_contact", referencedColumnName="id")
+//     */
+//    protected $contacts;
 
     /**
      * @var string $geocode
      *
-     * @ORM\Column(type="string")
+     * @Column(type="string")
      */
     protected $geocode;
 
     /**
      * @var string $geocode
      *
-     * @ORM\Column(type="string")
+     * @Column(type="string")
      */
     protected $provider;
 
     /**
      * @var InvoiceSubjectInterface | OwnerInterface $owner
      *
-     * @ORM\ManyToOne(targetEntity="OwnerInterface")
+     * @ManyToOne(targetEntity="LIG\Model\Prospect\ProspectOwnerInterface")
      */
     protected $owner;
 

@@ -14,8 +14,8 @@ class SalesManCollection extends ArrayCollection
         }
 
         array_walk($salesMans, function ($salesMan, $i) {
-            if (!$salesMan instanceof UserSalesMan) {
-                throw new \Exception('Invalid item (#'.$i.') in SalesManCollection expected instance of UserSalesMan');
+            if (!$salesMan instanceof UserSalesManInterface) {
+                throw new \Exception('Invalid item (#'.$i.') in SalesManCollection expected instance of UserSalesMan'.(is_object($salesMan) ? ' '.get_class($salesMan).' given' : ''));
             }
         });
 
@@ -24,7 +24,7 @@ class SalesManCollection extends ArrayCollection
 
     public function add($userSalesMan)
     {
-        if(!($userSalesMan instanceof UserSalesMan)){
+        if(!($userSalesMan instanceof UserSalesManInterface)){
             throw new \Exception('Invalid userSalesMan ');
         }
 

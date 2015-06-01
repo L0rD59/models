@@ -2,14 +2,13 @@
 
 namespace spec\LIG\Model\User;
 
-use LIG\Model\User\UserSalesMan;
-use LIG\Model\User\UserSalesManager;
+use LIG\Model\User\UserSalesManInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
 class SalesManCollectionSpec extends ObjectBehavior
 {
-    function let(UserSalesMan $userSalesMan)
+    function let(UserSalesManInterface $userSalesMan)
     {
         $this->beConstructedWith(array($userSalesMan));
     }
@@ -29,7 +28,7 @@ class SalesManCollectionSpec extends ObjectBehavior
         $this->shouldThrow('\Exception')->during('__construct', array(array(new \stdClass())));
     }
 
-    function it_can_add_only_sales_man_instance(UserSalesMan $salesMan)
+    function it_can_add_only_sales_man_instance(UserSalesManInterface $salesMan)
     {
         $this->shouldThrow('\Exception')->during('add', array(new \stdClass()));
 
