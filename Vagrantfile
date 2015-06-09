@@ -16,21 +16,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.network "forwarded_port", guest: 3306, host: 3306, auto_correct: true
 
 	## synced_folder
-	config.vm.network :private_network, type: "dhcp"
-	if Vagrant::Util::Platform.windows?
-		require 'yaml'
-		vconfig = YAML::load_file(ENV['HOME'] + "/.vagrant/config.yml")
-                config.vm.provision :puppet do |puppet|
-                        puppet.manifest_file = "syncedfolder.pp"
-                        puppet.facter = {
-                                "share_device"      => vconfig['directory'],
-                                "share_user"        => vconfig['user'],
-                                "share_password"    => vconfig['password']
-                        }
-                end
-	else
-		config.vm.synced_folder ".", "/data/models", type: "nfs"
-	end
+	config.vm.network :private_network, ip: "192.168.50.4"
+	config.vm.synced_folder ".", "/data/models", type: "nfs"
 
 	## Provisionning
         config.vm.provision "shell", inline: "apt-get update && apt-get -y upgrade"

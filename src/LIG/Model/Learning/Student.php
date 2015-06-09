@@ -16,9 +16,9 @@ class Student
      */
     protected $inscriptions;
 
-    public function __construct()
+    public function __construct(ArrayCollection $inscriptions)
     {
-        $this->inscriptions = new ArrayCollection();
+        $this->inscriptions = $inscriptions;
     }
 
     public function getInscriptions()
@@ -26,8 +26,15 @@ class Student
         return $this->inscriptions;
     }
 
-    public function hasInscription()
+    public function hasInscriptions()
     {
         return (bool) $this->inscriptions->count();
+    }
+
+    public function setInscriptions(InscriptionCollection $inscriptions)
+    {
+        $this->inscriptions = $inscriptions;
+
+        return $this;
     }
 }

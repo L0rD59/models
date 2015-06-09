@@ -9,9 +9,9 @@ use Prophecy\Argument;
 
 class InscriptionSpec extends ObjectBehavior
 {
-    function let(Student $student, AbstractCampus $campus)
+    function let(Student $student, \DateTime $dateInscription)
     {
-        $this->beConstructedWith($student, $campus);
+        $this->beConstructedWith($student, $dateInscription);
     }
 
     function it_is_initializable()
@@ -31,9 +31,8 @@ class InscriptionSpec extends ObjectBehavior
         $this->getStudent()->shouldBeAnInstanceOf('LIG\Model\Learning\Student');
     }
 
-    function it_should_have_a_campus()
+    function it_should_have_a_type()
     {
-        $this->getCampus()->shouldNotBeNull();
-        $this->getCampus()->shouldBeAnInstanceOf('LIG\Model\Learning\AbstractCampus');
+
     }
 }

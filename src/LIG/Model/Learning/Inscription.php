@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @MappedSuperclass
  */
-class Inscription
+class Inscription implements InscriptionInterface
 {
     /**
      * @var \DateTime $dateInscription Date d'inscription au campus
@@ -17,23 +17,15 @@ class Inscription
     protected $dateInscription;
 
     /**
-     * @var AbstractCampus $campus Campus auquel l'étudiant est inscrit
-     *
-     * @ManyToOne(targetEntity="AbstractCampus", cascade={"all"}, fetch="EAGER")
-     */
-    protected $campus;
-
-    /**
      * @var Student $student Etudiant inscrit
      *
      * @ManyToOne(targetEntity="Student", inversedBy="inscriptions", cascade={"all"}, fetch="EAGER")
      */
     protected $student;
 
-    public function __construct(Student $student, AbstractCampus $campus, \DateTime $dateInscription = null)
+    public function __construct(Student $student, \DateTime $dateInscription = null)
     {
         $this->student = $student;
-        $this->campus = $campus;
         $this->dateInscription = !is_null($dateInscription) ? $dateInscription : new \DateTime();
     }
 
@@ -42,9 +34,11 @@ class Inscription
         return $this->dateInscription;
     }
 
-    public function getCampus()
+    public function setDateInscription(\DateTime $dateInscription)
     {
-        return $this->campus;
+        $this->dateInscription = $dateInscription;
+
+        return $this;
     }
 
     public function getStudent()
