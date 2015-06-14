@@ -7,5 +7,4 @@ use LIG\Model\Formation\FormationQualifianteTrait;
 
 class FormationQualifiante extends Formation
 {
-    use FormationQualifianteTrait;
 }

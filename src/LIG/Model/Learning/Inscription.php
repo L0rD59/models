@@ -2,24 +2,15 @@
 
 namespace LIG\Model\Learning;
 
-use Doctrine\ORM\Mapping as ORM;
-
-/**
- * @MappedSuperclass
- */
 class Inscription implements InscriptionInterface
 {
     /**
      * @var \DateTime $dateInscription Date d'inscription au campus
-     *
-     * @Column(type="datetime")
      */
     protected $dateInscription;
 
     /**
      * @var Student $student Etudiant inscrit
-     *
-     * @ManyToOne(targetEntity="Student", inversedBy="inscriptions", cascade={"all"}, fetch="EAGER")
      */
     protected $student;
 

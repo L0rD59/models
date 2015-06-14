@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                   https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
+
+    <entity name="LIG\Entity\Formation\Formation" table="formation" inheritance-type="JOINED">
+
+        <discriminator-column name="type" type="string" />
+        <discriminator-map>
+            <discriminator-mapping value="default" class="Formation" />
+            <discriminator-mapping value="certifiante" class="FormationCertifiante" />
+            <discriminator-mapping value="diplomante" class="FormationDiplomante" />
+            <discriminator-mapping value="qualifiante" class="FormationQualifiante" />
+        </discriminator-map>
+
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+    </entity>
+
+</doctrine-mapping>

@@ -2,24 +2,15 @@
 
 namespace LIG\Model\Formation;
 
-use Doctrine\ORM\Mapping as ORM;
-
-/**
- * @MappedSuperclass
- */
 class Formation implements FormationInterface
 {
     /**
      * @var string $name Nom de la formation
-     *
-     * @Column()
      */
     protected $name;
 
     /**
      * @var string $shortname Petit-nom de la formation
-     *
-     * @Column()
      */
     protected $shortname;
 

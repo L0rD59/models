@@ -10,5 +10,4 @@ use LIG\Model\Formation\Internship;
 
 class FormationDiplomante extends Formation
 {
-    use FormationDiplomanteTrait;
 }

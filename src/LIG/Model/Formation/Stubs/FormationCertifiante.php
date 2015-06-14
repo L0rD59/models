@@ -7,5 +7,5 @@ use LIG\Model\Formation\FormationCertifianteTrait;
 
 class FormationCertifiante extends Formation
 {
-    use FormationCertifianteTrait;
+
 }

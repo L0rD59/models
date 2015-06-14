@@ -3,7 +3,11 @@
 namespace LIG\Model\Learning;
 
 use LIG\Model\Formation\FormationInterface;
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Entity()
+ */
 class InscriptionFormation extends Inscription
 {
     protected $formation;
