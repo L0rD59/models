@@ -9,11 +9,11 @@ use Prophecy\Argument;
 
 class FormationCertifianteSpec extends ObjectBehavior
 {
-    public function let(\LIG\Model\Formation\Degree $degree,\LIG\Model\Formation\Business $business = null)
+    public function let(\LIG\Model\Formation\Degree $degree)
     {
         $this->beAnInstanceOf('LIG\Model\Formation\Stubs\FormationCertifiante');
 
-        $this->beConstructedWith('name', 'shortname', 1500, $degree, $business);
+        $this->beConstructedWith('name', 'shortname', 1500, $degree);
     }
 
     public function it_is_initializable()

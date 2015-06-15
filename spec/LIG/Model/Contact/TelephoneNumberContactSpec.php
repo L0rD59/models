@@ -21,7 +21,7 @@ class TelephoneNumberContactSpec extends ObjectBehavior
         $this->shouldImplement('LIG\Model\Contact\TelephoneNumberContactInterface');
         $this->shouldImplement('LIG\Model\Contact\ContactInterface');
 
-        $this->getValue()->shouldNotBeNull();
+        $this->getValue()->shouldNotBe(null);
     }
 
     function it_should_have_a_muteable_telephone_number($telephoneNumber)

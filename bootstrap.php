@@ -31,5 +31,14 @@ $dbParams = array(
 
 $config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
 $configXML = Setup::createXMLMetadataConfiguration($pathsXML, $isDevMode);
-$entityManager = EntityManager::create($dbParams, $configXML);
+
+$evm = new \Doctrine\Common\EventManager();
+
+// tree
+$treeListener = new \Gedmo\Tree\TreeListener();
+//$treeListener->setAnnotationReader($cachedAnnotationReader);
+$evm->addEventSubscriber($treeListener);
+
+
+return $entityManager = EntityManager::create($dbParams, $configXML, $evm);
 

@@ -14,14 +14,14 @@ class LessonSpec extends ObjectBehavior
 
 //    function it_should_have_a_muteable_name($name)
 //    {
-//        $this->getName()->shouldNotBeNull();
+//        $this->getName()->shouldNotBe(null);
 //        $this->setName($name)->getName()->shouldReturn($name);
 //
 //    }
 //
 //    function it_should_have_a_muteable_code($code)
 //    {
-//        $this->getCode()->shouldNotBeNull();
+//        $this->getCode()->shouldNotBe(null);
 //
 //        $this->setCode($code)->getCode()->shouldReturn($code);
 //    }

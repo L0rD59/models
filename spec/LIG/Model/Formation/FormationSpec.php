@@ -9,9 +9,9 @@ use Prophecy\Argument;
 
 class FormationSpec extends ObjectBehavior
 {
-    public function let(\LIG\Model\Formation\Degree $degree,\LIG\Model\Formation\Business $business = null, Internship $internship)
+    public function let(\LIG\Model\Formation\Degree $degree, Internship $internship)
     {
-        $this->beConstructedWith('name', 'shortname', 1500, $degree, $business, $internship);
+        $this->beConstructedWith('name', 'shortname', 1500, $degree, $internship);
     }
 
     public function it_is_initializable()
@@ -34,12 +34,6 @@ class FormationSpec extends ObjectBehavior
         $this->setShortname('shortname')->getShortname()->shouldReturn('shortname');
     }
 
-    public function it_could_have_a_business(\LIG\Model\Formation\Business $business = null)
-    {
-        $this->setBusiness($business)->getBusiness()->shouldReturn($business);
-        $this->getBusiness()->shouldBeAnInstanceOf('LIG\Model\Formation\Business');
-    }
-
     public function it_should_have_a_degree(\LIG\Model\Formation\Degree $degree)
     {
         $this->getDegree()->shouldNotReturn(null);
@@ -50,13 +44,13 @@ class FormationSpec extends ObjectBehavior
 
     public function it_should_have_an_muteable_internship(Internship $intership)
     {
-        $this->getInternship()->shouldNotBeNull();
+        $this->getInternship()->shouldNotBe(null);
         $this->setInternship($intership)->getInternship()->shouldReturn($intership);
     }
 
     public function it_should_have_an_muteable_duration_in_hour($duration)
     {
-        $this->getDuration()->shouldNotBeNull();
+        $this->getDuration()->shouldNotBe(null);
         $this->setDuration($duration)->getDuration()->shouldReturn($duration);
     }
 }

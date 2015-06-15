@@ -21,28 +21,28 @@ class LeadSpec extends ObjectBehavior
 
     public function it_should_have_a_muteable_firstname($firstname)
     {
-        $this->getFirstname()->shouldNotBeNull();
+        $this->getFirstname()->shouldNotBe(null);
 
         $this->setFirstname($firstname)->getFirstname()->shouldReturn($firstname);
     }
 
     public function it_should_have_a_muteable_lastname($lastname)
     {
-        $this->getLastname()->shouldNotBeNull();
+        $this->getLastname()->shouldNotBe(null);
 
         $this->setLastname($lastname)->getLastname()->shouldReturn($lastname);
     }
 
     public function it_should_have_a_muteable_email($email)
     {
-        $this->getEmail()->shouldNotBeNull();
+        $this->getEmail()->shouldNotBe(null);
 
         $this->setEmail($email)->getEmail()->shouldReturn($email);
     }
 
     public function it_should_have_a_muteable_phone($phone)
     {
-        $this->getPhone()->shouldNotBeNull();
+        $this->getPhone()->shouldNotBe(null);
 
         $this->setPhone($phone)->getPhone()->shouldReturn($phone);
     }

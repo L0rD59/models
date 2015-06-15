@@ -21,7 +21,7 @@ class FacebookContactSpec extends ObjectBehavior
         $this->shouldImplement('LIG\Model\Contact\FacebookContactInterface');
         $this->shouldImplement('LIG\Model\Contact\ContactInterface');
 
-        $this->getValue()->shouldNotBeNull();
+        $this->getValue()->shouldNotBe(null);
     }
 
     function it_should_have_a_mutable_fb_id($fb_id)

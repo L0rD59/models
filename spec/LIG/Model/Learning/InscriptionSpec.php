@@ -27,7 +27,7 @@ class InscriptionSpec extends ObjectBehavior
 
     function it_should_have_a_student()
     {
-        $this->getStudent()->shouldNotBeNull();
+        $this->getStudent()->shouldNotBe(null);
         $this->getStudent()->shouldBeAnInstanceOf('LIG\Model\Learning\Student');
     }
 //

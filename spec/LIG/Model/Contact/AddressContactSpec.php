@@ -25,7 +25,7 @@ class AddressContactSpec extends ObjectBehavior
 
     function it_should_have_an_address()
     {
-        $this->getValue()->shouldNotBeNull();
+        $this->getValue()->shouldNotBe(null);
         $this->getValue()->shouldImplement('Sylius\Component\Addressing\Model\AddressInterface');
     }
 }

@@ -59,13 +59,13 @@ class ProspectSpec extends ObjectBehavior
 
     function it_should_have_a_muteable_provider($provider)
     {
-        $this->getProvider()->shouldNotBeNull();
+        $this->getProvider()->shouldNotBe(null);
         $this->setProvider($provider)->getProvider()->shouldBe($provider);
     }
 
     function it_should_have_a_muteable_owner(ProspectOwnerInterface $owner)
     {
-        $this->getOwner()->shouldNotBeNull();
+        $this->getOwner()->shouldNotBe(null);
         $this->setOwner($owner)->getOwner()->shouldBe($owner);
     }
 

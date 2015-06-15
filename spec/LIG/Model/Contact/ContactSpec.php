@@ -21,7 +21,7 @@ class ContactSpec extends ObjectBehavior
 
     function it_should_have_a_muteable_name($name)
     {
-        $this->getName()->shouldNotBeNull();
+        $this->getName()->shouldNotBe(null);
         $this->setName($name)->getName()->shouldReturn($name);
     }
 
@@ -34,7 +34,7 @@ class ContactSpec extends ObjectBehavior
 
     function it_should_have_a_muteable_value($value)
     {
-        $this->getValue()->shouldNotBeNull();
+        $this->getValue()->shouldNotBe(null);
 
         $this->setValue($value)->getValue()->shouldReturn($value);
     }

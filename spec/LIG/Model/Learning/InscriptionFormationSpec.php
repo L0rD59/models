@@ -20,7 +20,7 @@ class InscriptionFormationSpec extends ObjectBehavior
 
     function it_should_have_a_muteable_formation(FormationInterface $formation)
     {
-        $this->getFormation()->shouldNotBeNull();
+        $this->getFormation()->shouldNotBe(null);
         $this->setFormation($formation)->getFormation()->shouldBe($formation);
     }
 }

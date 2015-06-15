@@ -23,14 +23,6 @@ class Formation implements FormationInterface
     protected $degree;
 
     /**
-     * @var Business $business
-     *
-     * @OneToOne(targetEntity="Business")
-     * @JoinColumn(name="business_id", referencedColumnName="id")
-     */
-    protected $business;
-
-    /**
      * @var Internship $internship Stage de la formation
      *
      * @OneToOne(targetEntity="Internship")
@@ -45,13 +37,12 @@ class Formation implements FormationInterface
      */
     protected $duration;
 
-    public function __construct($name, $shortname, $duration, Degree $degree, Business $business, Internship $internship = null)
+    public function __construct($name, $shortname, $duration, Degree $degree, Internship $internship = null)
     {
         $this->name = $name;
         $this->shortname = $shortname;
         $this->duration = $duration;
         $this->degree = $degree;
-        $this->business = $business;
 
         $this->internship = $internship;
     }
@@ -76,18 +67,6 @@ class Formation implements FormationInterface
     public function setShortname($shortname)
     {
         $this->shortname = $shortname;
-
-        return $this;
-    }
-
-    public function getBusiness()
-    {
-        return $this->business;
-    }
-
-    public function setBusiness(Business $business)
-    {
-        $this->business = $business;
 
         return $this;
     }
