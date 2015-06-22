@@ -8,8 +8,16 @@ Using Composer, add the enaco private repository in your `composer.json` :
 
 then run `composer require lig/models`
 
-#### Doctrine
-run `bin/doctrine list`
+### Usages :
 
-#### Tests
-run `bin/phpspec run`
+#### Doctrine :
+
+```
+make php cmd="bin/doctrine list"
+```
+
+#### Run tests :
+
+```
+make test
+```
