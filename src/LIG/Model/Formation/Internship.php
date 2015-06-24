@@ -7,8 +7,12 @@ class Internship
     /** @var String $name */
     protected $name;
 
-    public function __construct($name)
+    /** @var \DateTime $dateStart */
+    protected $dateStart;
+
+    public function __construct(\DateTime $dateStart, $name)
     {
+        $this->dateStart = $dateStart;
         $this->name = $name;
     }
 
@@ -20,6 +24,18 @@ class Internship
     public function setName($name)
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getDateStart()
+    {
+        return $this->dateStart;
+    }
+
+    public function setDateStart(\DateTime $dateStart)
+    {
+        $this->dateStart = $dateStart;
 
         return $this;
     }

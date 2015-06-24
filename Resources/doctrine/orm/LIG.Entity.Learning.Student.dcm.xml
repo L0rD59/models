@@ -8,7 +8,11 @@
         <id name="id" type="integer" column="id">
             <generator strategy="AUTO"/>
         </id>
-        <one-to-many field="inscriptions" target-entity="Inscription" mapped-by="student" />
+        <one-to-many field="inscriptions" target-entity="Inscription" mapped-by="studdent">
+            <cascade>
+                <cascade-all/>
+            </cascade>
+        </one-to-many>
     </entity>
 
 </doctrine-mapping>

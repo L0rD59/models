@@ -10,7 +10,9 @@
         "sylius/product": "~0.1@stable",
         "sylius/translation": "~0.1@stable",
         "gedmo/doctrine-extensions": "~2.0@stable",
-        "doctrine/data-fixtures": "~1.0@stable"
+        "doctrine/data-fixtures": "~1.0@stable",
+        "nelmio/alice": "~2.0@stable",
+        "dunglas/php-schema": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0@stable",

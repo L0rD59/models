@@ -1,0 +1,4 @@
+LIG\Entity\Learning\Inscription:
+    inscription{1..10}:
+        __construct: { create: [<username()>] }
+        id (unique): <current()>

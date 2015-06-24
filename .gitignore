@@ -1,6 +1,7 @@
 /vendor/
 /.idea/
 /.vagrant/
+/.composer/
 
 /web/
 /src/LIG/Entity/

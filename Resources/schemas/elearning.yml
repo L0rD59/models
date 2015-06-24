@@ -1,0 +1,46 @@
+rdfa:
+ - Resources/schemas/schema_org_rdfa.html
+# Debug mode
+debug:                true
+
+# Automatically add an id field to entities
+generateId:           true
+
+# Generate interfaces and use Doctrine's Resolve Target Entity feature
+useInterface:         true
+
+# Emit a warning if a property is not derived from GoodRelations
+checkIsGoodRelations:  true
+
+# PHP namespaces
+namespaces:
+    # The namespace of the generated entities
+    entity:               SchemaOrg\Entity # Example: Acme\Entity
+    # The namespace of the generated enumerations
+    enum:                 SchemaOrg\Enum # Example: Acme\Enum
+    # The namespace of the generated interfaces
+    interface:            SchemaOrg\Model # Example: Acme\Model
+
+
+# Visibility of entities fields
+fieldVisibility: "protected" # One of "private"; "protected"; "public"
+
+# Schema.org's types to use
+types:
+    Thing: ~
+    Person: ~
+    Student:
+        parent: Person
+        properties:
+            image: ~
+            description: ~
+            nationality: ~
+            gender: ~
+            homeLocation: ~
+            givenName: ~
+            familyName: ~
+            email: ~
+            birthDate: ~
+            birthPlace: ~
+            affiliation: ~
+            address: ~
