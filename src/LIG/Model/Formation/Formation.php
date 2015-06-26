@@ -23,28 +23,17 @@ class Formation implements FormationInterface
     protected $degree;
 
     /**
-     * @var Internship $internship Stage de la formation
-     *
-     * @OneToOne(targetEntity="Internship")
-     * @JoinColumn(name="internship_id", referencedColumnName="id", nullable=true)
-     */
-    protected $internship = null;
-
-    /**
      * @var integer $duration Durée de la formation
      *
      * @Column(type="integer")
      */
     protected $duration;
 
-    public function __construct($name, $shortname, $duration, Degree $degree, Internship $internship = null)
+    public function __construct($name, $duration, $shortname = null)
     {
         $this->name = $name;
         $this->shortname = $shortname;
         $this->duration = $duration;
-        $this->degree = $degree;
-
-        $this->internship = $internship;
     }
 
     public function getName()
@@ -67,30 +56,6 @@ class Formation implements FormationInterface
     public function setShortname($shortname)
     {
         $this->shortname = $shortname;
-
-        return $this;
-    }
-
-    public function getDegree()
-    {
-        return $this->degree;
-    }
-
-    public function setDegree(Degree $degree)
-    {
-        $this->degree = $degree;
-
-        return $this;
-    }
-
-    public function getInternship()
-    {
-        return $this->internship;
-    }
-
-    public function setInternship(Internship $internship)
-    {
-        $this->internship = $internship;
 
         return $this;
     }

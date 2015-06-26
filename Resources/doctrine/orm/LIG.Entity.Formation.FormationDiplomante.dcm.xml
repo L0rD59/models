@@ -5,7 +5,9 @@
                    https://raw.github.com/doctrine/doctrine2/master/doctrine-mapping.xsd">
 
     <entity name="LIG\Entity\Formation\FormationDiplomante" table="formation_diplomante">
-
+        <many-to-one target-entity="LIG\Entity\Formation\Degree" field="degree">
+            <join-column name="degree_id" referenced-column-name="id" nullable="false"></join-column>
+        </many-to-one>
     </entity>
 
 </doctrine-mapping>

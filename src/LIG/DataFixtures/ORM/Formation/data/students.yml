@@ -1,4 +1,4 @@
 LIG\Entity\Learning\Student:
     student{1..10}:
-        __construct: { create: [<username()>] }
+        __construct: [<username()>]
         id (unique): <current()>

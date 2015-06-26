@@ -13,11 +13,11 @@ then run `composer require lig/models`
 #### Doctrine :
 
 ```
-php bin/doctrine
+php bin/doctrine orm:schema-tool:update --force
 ```
 
 #### Data Fixtures
-php bin/doctrine fixtures:load
+php bin/doctrine fixtures:load --fixtures=src/LIG/DataFixtures/ORM
 
 
 #### Run tests :

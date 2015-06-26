@@ -15,11 +15,11 @@ class LoadStudentData extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         // load objects from a yaml file
-        $loader = new Fixtures\Loader();
-        $objects = $loader->load(__DIR__.'/data/students.yml');
-
-        $persister = new Doctrine($manager);
-        $persister->persist($objects);
+//        $loader = new Fixtures\Loader();
+//        $objects = $loader->load(__DIR__.'/data/students.yml');
+//
+//        $persister = new Doctrine($manager);
+//        $persister->persist($objects);
     }
 
     public function getOrder()

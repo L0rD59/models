@@ -6,16 +6,20 @@ use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use LIG\Entity\Formation\FormationQualifiante;
+use Nelmio\Alice\Fixtures\Loader;
+use Nelmio\Alice\Persister\Doctrine;
 
 class LoadFormationData extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        $degree = new FormationQualifiante('Formation Qualifiante 1', 'FQ 1', 1000, $this->getReference('degree-bts'), $this->getReference('internship-bts'));
-        $manager->persist($degree);
 
+        // load objects from a yaml file
+        $loader = new Loader();
+        $objects = $loader->load(__DIR__.'/data/formations.yml');
 
-        $manager->flush();
+        $persister = new Doctrine($manager);
+        $persister->persist($objects);
     }
 
     public function getOrder()

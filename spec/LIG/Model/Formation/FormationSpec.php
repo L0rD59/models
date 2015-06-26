@@ -20,37 +20,21 @@ class FormationSpec extends ObjectBehavior
 //        $this->shouldImplement('LIG\Model\Formation\FormationInteface');
     }
 
-    public function it_should_have_a_name()
+    public function it_should_have_a_muteable_name($name)
     {
         $this->getName()->shouldNotReturn(null);
 
-        $this->setName('name')->getName()->shouldReturn('name');
+        $this->setName($name)->getName()->shouldReturn($name);
     }
 
-    public function it_should_have_a_shortname()
-    {
-        $this->getShortname()->shouldNotReturn(null);
-
-        $this->setShortname('shortname')->getShortname()->shouldReturn('shortname');
-    }
-
-    public function it_should_have_a_degree(\LIG\Model\Formation\Degree $degree)
-    {
-        $this->getDegree()->shouldNotReturn(null);
-
-        $this->setDegree($degree)->getDegree()->shouldReturn($degree);
-        $this->getDegree()->shouldBeAnInstanceOf('LIG\Model\Formation\Degree');
-    }
-
-    public function it_should_have_an_muteable_internship(Internship $intership)
-    {
-        $this->getInternship()->shouldNotBe(null);
-        $this->setInternship($intership)->getInternship()->shouldReturn($intership);
-    }
-
-    public function it_should_have_an_muteable_duration_in_hour($duration)
+    public function it_should_have_a_muteable_duration_in_hour($duration)
     {
         $this->getDuration()->shouldNotBe(null);
         $this->setDuration($duration)->getDuration()->shouldReturn($duration);
+    }
+
+    public function it_could_have_a_shortname($shortname)
+    {
+        $this->setShortname($shortname)->getShortname()->shouldReturn($shortname);
     }
 }

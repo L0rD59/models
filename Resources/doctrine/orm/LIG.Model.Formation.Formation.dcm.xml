@@ -6,8 +6,8 @@
 
     <mapped-superclass name="LIG\Model\Formation\Formation">
         <field name="name" type="string" />
-        <field name="shortname" type="string" />
         <field name="duration" type="integer" />
+        <field name="shortname" type="string" nullable="true" />
     </mapped-superclass>
 
 </doctrine-mapping>

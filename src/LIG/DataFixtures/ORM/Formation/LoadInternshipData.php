@@ -12,7 +12,7 @@ class LoadInternshipData extends AbstractFixture implements OrderedFixtureInterf
 {
     public function load(ObjectManager $manager)
     {
-        $internship = new Internship('Stage de la formation BTS ? ou pas spécifiquement ?');
+        $internship = new Internship(new \DateTime(''), 'Stage de la formation BTS ? ou pas spécifiquement ?');
         $manager->persist($internship);
 
         $this->addReference('internship-bts', $internship);
