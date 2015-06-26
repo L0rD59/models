@@ -3,6 +3,6 @@
 /.vagrant/
 /.composer/
 
-/web/
-/src/LIG/Entity/
-/cli-config.php
+#/web/
+#/src/LIG/Entity/
+#/cli-config.php
