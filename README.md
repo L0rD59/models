@@ -13,11 +13,15 @@ then run `composer require lig/models`
 #### Doctrine :
 
 ```
-make php cmd="bin/doctrine list"
+php bin/doctrine
 ```
+
+#### Data Fixtures
+php bin/doctrine fixtures:load
+
 
 #### Run tests :
 
 ```
-make test
+php bin/phpspec run
 ```

@@ -1,4 +1,4 @@
-formatter.name: pretty
+formatter.name: ~ # pretty, dot, html, progress(default)
 suites:
     model_prospect:
         namespace: LIG\Model\Prospect
