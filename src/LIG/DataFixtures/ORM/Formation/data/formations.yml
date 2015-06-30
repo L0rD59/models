@@ -1,0 +1,20 @@
+LIG\Entity\Formation\FormationQualifiante:
+    formation_qualifiante_option_esthetique_cosmetique:
+        __construct: ["Option esthétique/cosmétique", 120]
+    formation_qualifiante_option_mode_habillement:
+        __construct: ["Option mode/habillement", 120]
+    formation_qualifiante_conseiller_vente:
+        __construct: ["Conseiller(ère) Vente", 580]
+    formation_qualifiante_conseiller_vente_spe_mode:
+        __construct: ["Conseiller(ère) Vente - Spécialité Mode", 700]
+    formation_qualifiante_conseiller_vente_spe_esthetique:
+        __construct: ["Conseiller(ère) Vente - Spécialité Esthétique", 700]
+    formation_qualifiante_hotesse_commerciale:
+        __construct: ["Hôtesse commerciale", 620]
+    formation_qualifiante_agent_immobilier_2008:
+        __construct: ["Agent Immobilier (version 2008)", 594]
+
+
+LIG\Entity\Formation\FormationDiplomante:
+    formation_diplomante_profession_immobiliere:
+        __construct: ["Professions Immobilières", 2376, "PI", @degree_bts]

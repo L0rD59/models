@@ -24,9 +24,10 @@ class StudentSpec extends ObjectBehavior
 
     function it_should_have_muteable_inscriptions(InscriptionCollection $inscriptions)
     {
-        $this->getInscriptions()->shouldNotBeNull();
+        $this->getInscriptions()->shouldNotReturn(null);
         $this->setInscriptions($inscriptions)->getInscriptions()->shouldReturn($inscriptions);
     }
+
 //    function it_should_have_least_one_inscription()
 //    {
 //        $this->getInscriptions()->shouldHaveType('LIG\Model\Learning\InscriptionCollection');

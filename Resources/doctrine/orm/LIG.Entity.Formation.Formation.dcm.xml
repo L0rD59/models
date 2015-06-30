@@ -17,6 +17,9 @@
         <id name="id" type="integer" column="id">
             <generator strategy="AUTO"/>
         </id>
+
+        <one-to-many target-entity="LIG\Entity\Learning\LessonConfiguration" mapped-by="formation" field="lessonsConfiguration">
+        </one-to-many>
     </entity>
 
 </doctrine-mapping>

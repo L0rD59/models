@@ -9,9 +9,9 @@ use Prophecy\Argument;
 
 class FormationSpec extends ObjectBehavior
 {
-    public function let(\LIG\Model\Formation\Degree $degree, Internship $internship)
+    public function let($name, $duration, $shortname)
     {
-        $this->beConstructedWith('name', 'shortname', 1500, $degree, $internship);
+        $this->beConstructedWith($name, $duration, $shortname);
     }
 
     public function it_is_initializable()

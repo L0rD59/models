@@ -1,0 +1,9 @@
+LIG\Entity\Formation\Degree:
+    degree_bts:
+        __construct: ["Brevet Technicient Supérieur", "BTS"]
+    degree_cap:
+        __construct: ["Certificat d'Aptitude Professionel", "CAP"]
+    degree_dees:
+        __construct: ["Diplôme Européen d'Études Supérieures", "DEES"]
+    degree_master:
+        __construct: ["Master", "Master"]

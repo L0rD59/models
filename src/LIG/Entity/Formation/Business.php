@@ -13,5 +13,10 @@ class Business
      * @Id
      * @GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    protected $id;$
+
+    public function getId()
+    {
+        return $this->id;
+    }
 }

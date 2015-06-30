@@ -14,12 +14,32 @@ class LoadDegreeData extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        // load objects from a yaml file
-        $loader = new Loader();
-        $objects = $loader->load(__DIR__.'/data/degrees.yml');
+//        // with alice
+//        $loader = new Loader();
+//        $objects = $loader->load(__DIR__.'/data/degrees.yml');
+//
+//        $persister = new Doctrine($manager);
+//        $persister->persist($objects);
 
-        $persister = new Doctrine($manager);
-        $persister->persist($objects);
+
+
+        $degreeBTS = new Degree("Brevet Technicient Supérieur", "BTS");
+        $degreeCAP = new Degree("Certificat d'Aptitude Professionel", "CAP");
+        $degreeDEES = new Degree("Diplôme Européen d'Études Supérieures", "DEES");
+        $degreeMaster = new Degree("Master", "Master");
+
+        $manager->persist($degreeBTS);
+        $manager->persist($degreeCAP);
+        $manager->persist($degreeDEES);
+        $manager->persist($degreeMaster);
+
+        $manager->flush();
+
+        $this->addReference('degree-bts', $degreeBTS);
+        $this->addReference('degree-cap', $degreeCAP);
+        $this->addReference('degree-dees', $degreeDEES);
+        $this->addReference('degree-master', $degreeMaster);
+
     }
 
     public function getOrder()

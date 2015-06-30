@@ -6,10 +6,14 @@ suites:
         namespace: LIG\Model\Address
     model_formation:
         namespace: LIG\Model\Formation
+    entity_formation:
+        namespace: LIG\Entity\Formation
     model_user:
         namespace: LIG\Model\User
     model_learning:
         namespace: LIG\Model\Learning
+    entity_learning:
+        namespace: LIG\Entity\Learning
     model_contact:
         namespace: LIG\Model\Contact
     model_lesson:

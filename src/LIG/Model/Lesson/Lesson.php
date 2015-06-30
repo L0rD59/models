@@ -12,35 +12,39 @@ class Lesson
     protected $name;
 
     /**
-     * Code of lesson
+     * Reference of lesson
      *
      * @var string $code
      */
-    protected $code;
+    protected $reference;
 
-    /**
-     * Steps of lesson
-     *
-     * @var \RecursiveTreeIterator
-     */
-    protected $steps;
-
-    public function __construct()
+    public function __construct($name, $reference)
     {
-        $this->steps = new StepTreeIterator();
+        $this->name = $name;
+        $this->reference = $reference;
     }
+
     public function getName()
     {
         return $this->name;
     }
 
-    public function getCode()
+    public function setName($name)
     {
-        return $this->code;
+        $this->name = $name;
+
+        return $this;
     }
 
-    public function getSteps()
+    public function getReference()
     {
-        return $this->steps;
+        return $this->reference;
+    }
+
+    public function setReference($reference)
+    {
+        $this->reference = $reference;
+
+        return $this;
     }
 }

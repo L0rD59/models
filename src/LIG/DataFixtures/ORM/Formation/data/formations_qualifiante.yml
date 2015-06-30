@@ -1,0 +1,7 @@
+LIG\Entity\Learning\FormationQualifiante:
+    formation_qualifiante_option_esthetique_cosmetique:
+        name: Option esthétique/cosmétique
+        shortname: null
+        duration: 120
+        degreee: null
+        internship: null
