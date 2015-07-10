@@ -1,0 +1,33 @@
+datas:
+  name: datas
+  image: busybox
+  volumes:
+    - /var/lib/mysql
+    - /datas
+
+web:
+  image: docker.enaco.fr/webserver:5.6
+  environment:
+    DEV: true
+    MYSQL_USER: "root"
+    MYSQL_PASSWORD: ""
+    MYSQL_DBNAME: "api"
+    USER_UID: 1002
+  volumes:
+    - .:/app
+  volumes_from:
+    - datas
+  ports:
+    - "127.0.0.1:80"
+  links:
+    - mysql
+
+mysql:
+  hostname : mysql
+  image: mysql
+  volumes_from:
+    - datas
+  ports:
+    - "127.0.0.1:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: "root"

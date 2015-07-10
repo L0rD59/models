@@ -2,7 +2,5 @@
 /.idea/
 /.vagrant/
 /.composer/
+/bin/
 
-#/web/
-#/src/LIG/Entity/
-#/cli-config.php

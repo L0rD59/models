@@ -198,125 +198,94 @@ function makeYellow(element_id) {
     <div id="div_group_1" class="example_group">
 
       <dl>
-        <dt id="example_group_1">LIG\Model\Learning\InscriptionCollection</dt>
-          <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it can not be empty</dd>
-          <dd class="example passed">it should contain only contact instance</dd>
-          <dd class="example passed">it can add only contact instance</dd>
-      </dl>
-    
-    </div>
-    <div id="div_group_2" class="example_group">
-
-      <dl>
-        <dt id="example_group_2">LIG\Model\Learning\InscriptionCours</dt>
-          <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it should have a muteable cours</dd>
-      </dl>
-    
-    </div>
-    <div id="div_group_3" class="example_group">
-
-      <dl>
-        <dt id="example_group_3">LIG\Model\Learning\InscriptionFormation</dt>
-          <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it should have a muteable formation</dd>
-      </dl>
-    
-    </div>
-    <div id="div_group_4" class="example_group">
-
-      <dl>
-        <dt id="example_group_4">LIG\Model\Learning\Inscription</dt>
-          <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it should have a date inscription</dd>
-          <dd class="example passed">it should have a student</dd>
-      </dl>
-    
-    </div>
-    <div id="div_group_5" class="example_group">
-
-      <dl>
-        <dt id="example_group_5">LIG\Model\Learning\Student</dt>
-          <dd class="example passed">it is initializable</dd>
-          <script type="text/javascript">makeRed('phpspec-header');</script>
-          <script type="text/javascript">makeRed('div_group_5');</script>
-          <script type="text/javascript">makeRed('example_group_5');</script>
-          <dd class="example failed">
-            <span class="failed_spec_name">it should have muteable inscriptions (FAILED - 1)</span>
-              <div class="failure" id="failure_1">
-                <div class="message"><pre>Method [obj:Double\LIG\Model\Learning\InscriptionCollection\P26]::isNull() not found.</pre></div>
-                <div class="backtrace"><pre>#42 /app/vendor/phpspec/phpspec/src/PhpSpec/Wrapper/Subject/Expectation/Negative.php<br />
-#74 /app/vendor/phpspec/phpspec/src/PhpSpec/Wrapper/Subject/Expectation/DispatcherDecorator.php<br />
-#46 /app/vendor/phpspec/phpspec/src/PhpSpec/Wrapper/Subject/Expectation/UnwrapDecorator.php<br />
-#60 /app/vendor/phpspec/phpspec/src/PhpSpec/Wrapper/Subject/Expectation/ConstructorDecorator.php<br />
-#248 /app/vendor/phpspec/phpspec/src/PhpSpec/Wrapper/Subject.php<br />
-#190 /app/vendor/phpspec/phpspec/src/PhpSpec/Wrapper/Subject.php<br />
-#27 /app/spec/LIG/Model/Learning/StudentSpec.php<br />
-#27 /app/spec/LIG/Model/Learning/StudentSpec.php<br />
-#143 /app/vendor/phpspec/phpspec/src/PhpSpec/Runner/ExampleRunner.php<br />
-#81 /app/vendor/phpspec/phpspec/src/PhpSpec/Runner/ExampleRunner.php<br />
-#55 /app/vendor/phpspec/phpspec/src/PhpSpec/Runner/SpecificationRunner.php<br />
-#56 /app/vendor/phpspec/phpspec/src/PhpSpec/Runner/SuiteRunner.php<br />
-#149 /app/vendor/phpspec/phpspec/src/PhpSpec/Console/Command/RunCommand.php<br />
-#259 /app/vendor/symfony/console/Command/Command.php<br />
-#886 /app/vendor/symfony/console/Application.php<br />
-#195 /app/vendor/symfony/console/Application.php<br />
-#85 /app/vendor/phpspec/phpspec/src/PhpSpec/Console/Application.php<br />
-#126 /app/vendor/symfony/console/Application.php<br />
-#26 /app/vendor/phpspec/phpspec/bin/phpspec</pre></div>
-                <pre class="php">
-<span class="linenum">25</span><span class="normal">    function it_should_have_muteable_inscriptions(InscriptionCollection $inscriptions)</span>
-<span class="linenum">26</span><span class="normal">    {</span>
-<span class="linenum">27</span><span class="offending">        $this->getInscriptions()->shouldNotBeNull();</span>
-<span class="linenum">28</span><span class="normal">        $this->setInscriptions($inscriptions)->getInscriptions()->shouldReturn($inscriptions);</span>
-<span class="linenum">29</span><span class="normal">    }</span>
-<span class="linenum">30</span><span class="normal">//    function it_should_have_least_one_inscription()</span>
-</pre>
-              </div>
-          </dd>
-      </dl>
-    
-    </div>
-    <div id="div_group_6" class="example_group">
-
-      <dl>
-        <dt id="example_group_6">LIG\Model\Lesson\Lesson</dt>
-          <dd class="example passed">it is initializable</dd>
-      </dl>
-    
-    </div>
-    <div id="div_group_7" class="example_group">
-
-      <dl>
-        <dt id="example_group_7">LIG\Model\Formation\Degree</dt>
+        <dt id="example_group_1">LIG\Model\Formation\Degree</dt>
           <dd class="example passed">it is initializable</dd>
           <dd class="example passed">it should have a muteable name</dd>
           <dd class="example passed">it should have a muteable shortname</dd>
       </dl>
     
     </div>
+    <div id="div_group_2" class="example_group">
+
+      <dl>
+        <dt id="example_group_2">LIG\Model\Formation\FormationCertifiante</dt>
+          <dd class="example passed">it is initializable</dd>
+      </dl>
+    
+    </div>
+    <div id="div_group_3" class="example_group">
+
+      <dl>
+        <dt id="example_group_3">LIG\Model\Formation\FormationDiplomante</dt>
+          <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it should have a degree</dd>
+          <dd class="example passed">it should have an muteable internship</dd>
+      </dl>
+    
+    </div>
+    <div id="div_group_4" class="example_group">
+
+      <dl>
+        <dt id="example_group_4">LIG\Model\Formation\FormationQualifiante</dt>
+          <dd class="example passed">it is initializable</dd>
+      </dl>
+    
+    </div>
+    <div id="div_group_5" class="example_group">
+
+      <dl>
+        <dt id="example_group_5">LIG\Model\Formation\Formation</dt>
+          <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it should have a muteable name</dd>
+          <dd class="example passed">it should have a muteable duration in hour</dd>
+          <dd class="example passed">it could have a shortname</dd>
+      </dl>
+    
+    </div>
+    <div id="div_group_6" class="example_group">
+
+      <dl>
+        <dt id="example_group_6">LIG\Model\Formation\Internship</dt>
+          <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it should have a muteable date start</dd>
+          <dd class="example passed">it should have a muteable name</dd>
+      </dl>
+    
+    </div>
+    <div id="div_group_7" class="example_group">
+
+      <dl>
+        <dt id="example_group_7">LIG\Model\User\SalesManCollection</dt>
+          <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it can not be empty</dd>
+          <dd class="example passed">it should contain only sales man instance</dd>
+          <dd class="example passed">it can add only sales man instance</dd>
+      </dl>
+    
+    </div>
     <div id="div_group_8" class="example_group">
 
       <dl>
-        <dt id="example_group_8">LIG\Model\Formation\FormationCertifiante</dt>
+        <dt id="example_group_8">LIG\Model\User\SalesManagerCollection</dt>
           <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it can not be empty</dd>
+          <dd class="example passed">it should contain only sales manager instance</dd>
+          <dd class="example passed">it can add only sales manager instance</dd>
       </dl>
     
     </div>
     <div id="div_group_9" class="example_group">
 
       <dl>
-        <dt id="example_group_9">LIG\Model\Formation\FormationDiplomante</dt>
+        <dt id="example_group_9">LIG\Model\User\UserAdministrator</dt>
           <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it should have an muteable internship</dd>
       </dl>
     
     </div>
     <div id="div_group_10" class="example_group">
 
       <dl>
-        <dt id="example_group_10">LIG\Model\Formation\FormationQualifiante</dt>
+        <dt id="example_group_10">LIG\Model\User\UserEducational</dt>
           <dd class="example passed">it is initializable</dd>
       </dl>
     
@@ -324,30 +293,73 @@ function makeYellow(element_id) {
     <div id="div_group_11" class="example_group">
 
       <dl>
-        <dt id="example_group_11">LIG\Model\Formation\Formation</dt>
+        <dt id="example_group_11">LIG\Model\User\UserProfessionalDevelopment</dt>
           <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it should have a name</dd>
-          <dd class="example passed">it should have a shortname</dd>
-          <dd class="example passed">it should have a degree</dd>
-          <dd class="example passed">it should have an muteable internship</dd>
-          <dd class="example passed">it should have an muteable duration in hour</dd>
       </dl>
     
     </div>
     <div id="div_group_12" class="example_group">
 
       <dl>
-        <dt id="example_group_12">LIG\Model\Formation\Internship</dt>
+        <dt id="example_group_12">LIG\Model\User\UserSalesDirector</dt>
           <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it should have a muteable date start</dd>
-          <dd class="example passed">it should have a muteable name</dd>
+          <dd class="example passed">it should have muteable sales managers</dd>
       </dl>
     
     </div>
     <div id="div_group_13" class="example_group">
 
       <dl>
-        <dt id="example_group_13">LIG\Model\Prospect\Lead</dt>
+        <dt id="example_group_13">LIG\Model\User\UserSalesMan</dt>
+          <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it should have a muteable collection of products</dd>
+          <dd class="example passed">it should have a muteable sales manager</dd>
+      </dl>
+    
+    </div>
+    <div id="div_group_14" class="example_group">
+
+      <dl>
+        <dt id="example_group_14">LIG\Model\User\UserSalesManager</dt>
+          <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it should have a muteable sales director</dd>
+          <dd class="example passed">it should have muteable sales mans</dd>
+      </dl>
+    
+    </div>
+    <div id="div_group_15" class="example_group">
+
+      <dl>
+        <dt id="example_group_15">LIG\Model\User\User</dt>
+          <dd class="example passed">it is initializable</dd>
+      </dl>
+    
+    </div>
+    <div id="div_group_16" class="example_group">
+
+      <dl>
+        <dt id="example_group_16">LIG\Model\Lesson\Lesson</dt>
+          <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it should have a muteable name</dd>
+          <dd class="example passed">it should have a muteable reference</dd>
+      </dl>
+    
+    </div>
+    <div id="div_group_17" class="example_group">
+
+      <dl>
+        <dt id="example_group_17">LIG\Entity\Learning\LessonConfiguration</dt>
+          <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it should have a muteable lesson</dd>
+          <dd class="example passed">it should have a formation</dd>
+          <dd class="example passed">it could have an assignment period</dd>
+      </dl>
+    
+    </div>
+    <div id="div_group_18" class="example_group">
+
+      <dl>
+        <dt id="example_group_18">LIG\Model\Prospect\Lead</dt>
           <dd class="example passed">it is initializable</dd>
           <dd class="example passed">it should have a muteable firstname</dd>
           <dd class="example passed">it should have a muteable lastname</dd>
@@ -360,10 +372,10 @@ function makeYellow(element_id) {
       </dl>
     
     </div>
-    <div id="div_group_14" class="example_group">
+    <div id="div_group_19" class="example_group">
 
       <dl>
-        <dt id="example_group_14">LIG\Model\Prospect\ProductCollection</dt>
+        <dt id="example_group_19">LIG\Model\Prospect\ProductCollection</dt>
           <dd class="example passed">it is initializable</dd>
           <dd class="example passed">it can not be empty</dd>
           <dd class="example passed">it should contain only product instance</dd>
@@ -371,19 +383,19 @@ function makeYellow(element_id) {
       </dl>
     
     </div>
-    <div id="div_group_15" class="example_group">
+    <div id="div_group_20" class="example_group">
 
       <dl>
-        <dt id="example_group_15">LIG\Model\Prospect\ProspectLearning</dt>
+        <dt id="example_group_20">LIG\Model\Prospect\ProspectLearning</dt>
           <dd class="example passed">it is initializable</dd>
           <dd class="example passed">it should have a unique study level attribute</dd>
       </dl>
     
     </div>
-    <div id="div_group_16" class="example_group">
+    <div id="div_group_21" class="example_group">
 
       <dl>
-        <dt id="example_group_16">LIG\Model\Prospect\Prospect</dt>
+        <dt id="example_group_21">LIG\Model\Prospect\Prospect</dt>
           <dd class="example passed">it is initializable</dd>
           <dd class="example passed">it should have collection of contacts</dd>
           <dd class="example passed">it could have a muteable firstname</dd>
@@ -396,19 +408,28 @@ function makeYellow(element_id) {
       </dl>
     
     </div>
-    <div id="div_group_17" class="example_group">
+    <div id="div_group_22" class="example_group">
 
       <dl>
-        <dt id="example_group_17">LIG\Model\Contact\AddressContact</dt>
+        <dt id="example_group_22">LIG\Entity\Formation\Formation</dt>
+          <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it could have a lessons configuration</dd>
+      </dl>
+    
+    </div>
+    <div id="div_group_23" class="example_group">
+
+      <dl>
+        <dt id="example_group_23">LIG\Model\Contact\AddressContact</dt>
           <dd class="example passed">it is initializable</dd>
           <dd class="example passed">it should have an address</dd>
       </dl>
     
     </div>
-    <div id="div_group_18" class="example_group">
+    <div id="div_group_24" class="example_group">
 
       <dl>
-        <dt id="example_group_18">LIG\Model\Contact\ContactCollection</dt>
+        <dt id="example_group_24">LIG\Model\Contact\ContactCollection</dt>
           <dd class="example passed">it is initializable</dd>
           <dd class="example passed">it can not be empty</dd>
           <dd class="example passed">it should contain only contact instance</dd>
@@ -416,10 +437,10 @@ function makeYellow(element_id) {
       </dl>
     
     </div>
-    <div id="div_group_19" class="example_group">
+    <div id="div_group_25" class="example_group">
 
       <dl>
-        <dt id="example_group_19">LIG\Model\Contact\Contact</dt>
+        <dt id="example_group_25">LIG\Model\Contact\Contact</dt>
           <dd class="example passed">it is initializable</dd>
           <dd class="example passed">it should have a muteable name</dd>
           <dd class="example passed">it should have a muteable owner</dd>
@@ -427,120 +448,85 @@ function makeYellow(element_id) {
       </dl>
     
     </div>
-    <div id="div_group_20" class="example_group">
-
-      <dl>
-        <dt id="example_group_20">LIG\Model\Contact\EmailContact</dt>
-          <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it should have an email as a value</dd>
-      </dl>
-    
-    </div>
-    <div id="div_group_21" class="example_group">
-
-      <dl>
-        <dt id="example_group_21">LIG\Model\Contact\FacebookContact</dt>
-          <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it should have a mutable fb id</dd>
-      </dl>
-    
-    </div>
-    <div id="div_group_22" class="example_group">
-
-      <dl>
-        <dt id="example_group_22">LIG\Model\Contact\TelephoneNumberContact</dt>
-          <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it should have a muteable telephone number</dd>
-      </dl>
-    
-    </div>
-    <div id="div_group_23" class="example_group">
-
-      <dl>
-        <dt id="example_group_23">LIG\Model\Address\Address</dt>
-          <dd class="example passed">it is initializable</dd>
-      </dl>
-    
-    </div>
-    <div id="div_group_24" class="example_group">
-
-      <dl>
-        <dt id="example_group_24">LIG\Model\User\SalesManCollection</dt>
-          <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it can not be empty</dd>
-          <dd class="example passed">it should contain only sales man instance</dd>
-          <dd class="example passed">it can add only sales man instance</dd>
-      </dl>
-    
-    </div>
-    <div id="div_group_25" class="example_group">
-
-      <dl>
-        <dt id="example_group_25">LIG\Model\User\SalesManagerCollection</dt>
-          <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it can not be empty</dd>
-          <dd class="example passed">it should contain only sales manager instance</dd>
-          <dd class="example passed">it can add only sales manager instance</dd>
-      </dl>
-    
-    </div>
     <div id="div_group_26" class="example_group">
 
       <dl>
-        <dt id="example_group_26">LIG\Model\User\UserAdministrator</dt>
+        <dt id="example_group_26">LIG\Model\Contact\EmailContact</dt>
           <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it should have an email as a value</dd>
       </dl>
     
     </div>
     <div id="div_group_27" class="example_group">
 
       <dl>
-        <dt id="example_group_27">LIG\Model\User\UserEducational</dt>
+        <dt id="example_group_27">LIG\Model\Contact\FacebookContact</dt>
           <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it should have a mutable fb id</dd>
       </dl>
     
     </div>
     <div id="div_group_28" class="example_group">
 
       <dl>
-        <dt id="example_group_28">LIG\Model\User\UserProfessionalDevelopment</dt>
+        <dt id="example_group_28">LIG\Model\Contact\TelephoneNumberContact</dt>
           <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it should have a muteable telephone number</dd>
       </dl>
     
     </div>
     <div id="div_group_29" class="example_group">
 
       <dl>
-        <dt id="example_group_29">LIG\Model\User\UserSalesDirector</dt>
+        <dt id="example_group_29">LIG\Model\Learning\InscriptionCollection</dt>
           <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it should have muteable sales managers</dd>
+          <dd class="example passed">it can not be empty</dd>
+          <dd class="example passed">it should contain only contact instance</dd>
+          <dd class="example passed">it can add only contact instance</dd>
       </dl>
     
     </div>
     <div id="div_group_30" class="example_group">
 
       <dl>
-        <dt id="example_group_30">LIG\Model\User\UserSalesMan</dt>
+        <dt id="example_group_30">LIG\Model\Learning\InscriptionCours</dt>
           <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it should have a muteable collection of products</dd>
-          <dd class="example passed">it should have a muteable sales manager</dd>
+          <dd class="example passed">it should have a muteable cours</dd>
       </dl>
     
     </div>
     <div id="div_group_31" class="example_group">
 
       <dl>
-        <dt id="example_group_31">LIG\Model\User\UserSalesManager</dt>
+        <dt id="example_group_31">LIG\Model\Learning\InscriptionFormation</dt>
           <dd class="example passed">it is initializable</dd>
-          <dd class="example passed">it should have a muteable sales director</dd>
-          <dd class="example passed">it should have muteable sales mans</dd>
+          <dd class="example passed">it should have a muteable formation</dd>
       </dl>
     
     </div>
     <div id="div_group_32" class="example_group">
 
       <dl>
-        <dt id="example_group_32">LIG\Model\User\User</dt>
+        <dt id="example_group_32">LIG\Model\Learning\Inscription</dt>
+          <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it should have a date inscription</dd>
+          <dd class="example passed">it should have a student</dd>
+      </dl>
+    
+    </div>
+    <div id="div_group_33" class="example_group">
+
+      <dl>
+        <dt id="example_group_33">LIG\Model\Learning\Student</dt>
+          <dd class="example passed">it is initializable</dd>
+          <dd class="example passed">it should have muteable inscriptions</dd>
+      </dl>
+    
+    </div>
+    <div id="div_group_34" class="example_group">
+
+      <dl>
+        <dt id="example_group_34">LIG\Model\Address\Address</dt>
           <dd class="example passed">it is initializable</dd>
       </dl>
     
