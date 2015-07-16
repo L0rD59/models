@@ -1,27 +1,30 @@
-## Models sample
+## Models
 
-#### Installation
+Some data model, can be generate with [php-schema](https://github.com/dunglas/php-schema "php-schema")
 
-Using Composer, add the enaco private repository in your `composer.json` : 
+### Requirements
 
-`composer config repositories.enaco-private composer http://packages-private.enaco.fr`
+This sample require [Docker](https://docker.com "Docker") and [Docker-Compose](https://docs.docker.com/compose/install/ "Docker-Compose").
 
-then run `composer require lig/models`
+### Installation
 
-### Usages :
+Clone this repository 
 
-#### Doctrine :
+Up environment `docker-compose up -d`
 
-```
-php bin/doctrine orm:schema-tool:update --force
-```
+Install composer dependencies `docker-compose run --rm composer install`
+
+### Usages
+
+Run `docker-compose port mysql 3306` to see the address of mysql.
+
+#### Doctrine 
+Run `docker-compose run --rm php bin/doctrine orm:schema-tool:update --force`.
 
 #### Data Fixtures
-php bin/doctrine fixtures:load --fixtures=src/LIG/DataFixtures/ORM
+Run `docker-compose run --rm php bin/doctrine fixtures:load --fixtures=src/LIG/DataFixtures/ORM`.
 
 
-#### Run tests :
+### Tests :
+Run `docker-compose run --rm php bin/phpspec run`.
 
-```
-php bin/phpspec run
-```

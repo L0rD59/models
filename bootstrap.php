@@ -24,10 +24,10 @@ $isDevMode = true;
 // the connection configuration
 $dbParams = array(
     'driver'   => 'pdo_mysql',
-    'host' => 'mysql',
+    'host' => getenv('MYSQL_PORT_3306_TCP_ADDR'),
     'user'     => 'root',
-    'password' => 'root',
-    'dbname'   => 'dev',
+    'password' => getenv('MYSQL_ENV_MYSQL_ROOT_PASSWORD'),
+    'dbname'   => 'models',
 );
 
 $config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
