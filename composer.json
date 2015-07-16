@@ -1,6 +1,6 @@
 {
-    "name": "lig/models",
-    "description": "ENACO Models",
+    "name": "jbrocail/models",
+    "description": "Some Data Models",
     "require": {
         "php": ">=5.4",
         "doctrine/orm": "~2.0@stable",
@@ -10,13 +10,13 @@
         "sylius/product": "~0.1@stable",
         "sylius/translation": "~0.1@stable",
         "gedmo/doctrine-extensions": "~2.0@stable",
-        "doctrine/data-fixtures": "~1.0@stable",
-        "nelmio/alice": "~2.0@stable",
         "dunglas/php-schema": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0@stable",
-        "phpspec/phpspec": "~2.0@stable"
+        "phpspec/phpspec": "~2.0@stable",
+        "doctrine/data-fixtures": "~1.0@stable",
+        "nelmio/alice": "~2.0@stable"
     },
     "autoload": {
         "psr-4": {
@@ -31,11 +31,10 @@
     "config": {
         "bin-dir": "bin"
     },
-    "license": "Proprietary",
     "authors": [
         {
-            "name": "LIG Developers",
-            "email": "developers@enaco.fr"
+            "name": "Johann Brocail",
+            "email": "contact@johannbrocail.fr"
         }
     ],
     "minimum-stability": "stable"
